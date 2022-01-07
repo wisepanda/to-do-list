@@ -1,0 +1,28 @@
+.todoItems ul li {
+    display: block;
+    width: 90%;
+    height: 50px;
+    border: 1px solid lightgrey;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 20px;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .todoItems ul li:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+  
+  .todoItems ul li input {
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: middle;
+    transform: scale(1.5);
+  }
+  
+  .todoItems ul li input:checked {
+    background-color: #8FC93A;
+    border: 1px solid red;
+  }
