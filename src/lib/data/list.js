@@ -1,7 +1,2 @@
-const toDoList = [
-    'Clean room',
-    'Wash clothes',
-    'Wash face'
-];
-
+const toDoList = JSON.parse(localStorage.getItem('toDoList'));
 export default toDoList;
