@@ -7,10 +7,11 @@ import './List.css'
 export default function List() {
     const [listInput, setListInput] = useState('');
     const [list, setList] = useState(toDoList);
+    // const [val, setVal] = useState("");
 
 
     function addToList() {
-        let newList;
+        let newList=[];
         const newListItem = {
             text: listInput,
             checked: false
@@ -23,7 +24,17 @@ export default function List() {
         newList.push(newListItem);
         localStorage.setItem('toDoList', JSON.stringify(newList));
         setList(newList);
+        setListInput("")     
+        
     }
+    // function handleSubmit(e) {
+    //     e.preventDefault();
+    //     console.log(val);
+    //     // clearing the values
+    //     setVal("");
+    //     return addToList;
+    // }
+    
     function removeFromList(index) {
         const newList = [...list]
         newList[index].checked = !newList[index].checked;
@@ -50,7 +61,7 @@ export default function List() {
         </ul>
       </div>
       <div className="todoInput">
-        <input onChange={e => setListInput(e.target.value)} type="text" />
+        <input onChange={e => setListInput(e.target.value)} value={listInput} type="text" />
         <button onClick={addToList}>Add</button>
       </div>
     </div>
